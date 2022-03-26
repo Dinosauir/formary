@@ -12,7 +12,7 @@ class FormaryServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'formary');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/abacuswonder'),
+            __DIR__.'/../public' => public_path('vendor/abacuswonder/formary'),
         ], 'public');
     }
 }

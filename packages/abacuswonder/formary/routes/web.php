@@ -5,6 +5,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('web')->group(function(){
+    Route::get('/survey/home', function (){
+        return view('formary::welcome');
+    });
 //    Route::get('/survey/create', [SurveyController::class, 'create'])->name('abacus.survey.create');
 //    Route::get('/survey/edit/{id}', [SurveyController::class, 'edit'])->name('abacus.survey.edit');
 //    Route::post('/survey/store', [SurveyController::class, 'store'])->name('abacus.survey.store');
