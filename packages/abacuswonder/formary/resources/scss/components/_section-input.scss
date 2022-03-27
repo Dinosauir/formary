@@ -1,33 +1,73 @@
-.input {
-    display: flex;
-    padding: 20px;
 
-    .logo {
-        margin-right: 20px;
-        height: 40px;
-        background: #D1EFD3;
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 10px;
+.section-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+        background: $background-color;
+
+        .add-item {
+            span {
+                cursor: pointer;
+                background: $secondary-color;
+                color: $background-color;
+            }
+        }
     }
 
-    .body {
+    button {
+        background: none;
+        border: none;
         display: flex;
-        flex-direction: column;
-        max-width: 90%;
-        gap: 5px;
+        padding: 20px;
+        transition: 100ms ease-in-out;
 
-        .name {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2D2D2D;
+        .logo {
+            margin-right: 20px;
+            min-height: 40px;
+            min-width: 40px;
+            background: $tertiary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
         }
 
-        .description {
-            font-size: 16px;
-            color: #8B8B8B;
+        .body {
+            display: flex;
+            flex-direction: column;
+            max-width: 90%;
+            text-align: left;
+            gap: 5px;
+
+            .name {
+                h1, h2, h3,
+                h4, h5, h6 {
+                    font-size: $heading-size;
+                    font-weight: bold;
+                    color: $heading-color;
+                }
+            }
+
+            .description {
+                p {
+                    font-size: $paragraph-over-size;
+                    color: $paragraph-color;
+                }
+
+            }
         }
+    }
+
+    .add-item span {
+        font-size: 25px;
+        background: unset;
+        color: $white;
+        padding: 2px 9px;
+        border-radius: 50px;
     }
 }

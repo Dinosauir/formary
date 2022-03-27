@@ -1,11 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .nav {
     height: 100px;
-    background: #40BB48;
+    background: $primary-color;
     padding: 0 90px;
 
     .nav-container {
@@ -25,8 +20,8 @@
             }
 
             .logo-name {
-                color: white;
-                font-size: 31px;
+                color: $white;
+                font-size: $logo-font-size;
             }
         }
 
@@ -43,9 +38,9 @@
                 border-radius: 5px;
                 height: 40px;
                 min-width: 40px;
-                color: white;
-                font-size: 15px;
-                background: #66CC77;
+                color: $white;
+                font-size: $subheading-size;
+                background: $secondary-color;
             }
         }
     }

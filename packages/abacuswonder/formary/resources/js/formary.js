@@ -3,12 +3,13 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import {createApp} from 'vue';
+
+import mitt from "mitt";
 
 window._ = require('lodash');
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.Vue = require('vue').default;
-
 try {
     require('bootstrap');
 } catch (e) {
@@ -23,17 +24,15 @@ try {
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+window.Vue = createApp({});
+const emitter = mitt();
+Vue.config.globalProperties.emitter = emitter;
+require('./components/index');
+
+Vue.mount('#app');
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-const components = require.context('./components', true, /\.vue$/i);
-components.keys().map((key) => {
-    const result = (`${key.split('/').pop().split('.')[0]}`).replace(/([A-Z])/g, "-$1");
-    const finalResult = result.slice(1).toLowerCase();
-    console.log(finalResult);
-
-    return Vue.component(finalResult, components(key).default)
-});
 
 // Vue.component('navbar', require('./components/Navbar.vue').default);
 // Vue.component('checkbox-input-icon', require('./components/icons/CheckboxIcon.vue').default);
@@ -47,6 +46,6 @@ components.keys().map((key) => {
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+
+
+
